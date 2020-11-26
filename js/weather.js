@@ -61,12 +61,12 @@ function gettingJSON(){
   
    //Default A2
    if (isCity == true && locationArrayLength == 1){
-       query = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key + "&units=" + units;
+       query = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key + "&units=" + units;
     } else if (isCity == true && locationArrayLength == 2){
-       query = "http://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode +  "&appid=" + key + "&units=" + units;
+       query = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode +  "&appid=" + key + "&units=" + units;
     } else {
         console.log('inside zip condition, printing countryCode: ', countryCode)
-        query = "http://api.openweathermap.org/data/2.5/weather?zip=" + zip + "," + countryCode + "&appid=" + key + "&units=" + units;
+        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "," + countryCode + "&appid=" + key + "&units=" + units;
     }
    
    
