@@ -51,9 +51,6 @@ function gettingJSON(){
        isCity = true;
    } else {
        zip = locationArray[0];
-       if (locationArrayLength == 1) {
-           countryCode = "US";
-       }
    }
 
    if (locationArrayLength == 2) {
@@ -67,8 +64,9 @@ function gettingJSON(){
       query = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + key + "&units=" + units;
    } else if (isCity == true && locationArrayLength == 2){
       query = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "," + countryCode +  "&appid=" + key + "&units=" + units;
+   } else if (locationArrayLength == 1) {
+       query = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "&appid=" + key + "&units=" + units;
    } else {
-   
        query = "https://api.openweathermap.org/data/2.5/weather?zip=" + zip + "," + countryCode + "&appid=" + key + "&units=" + units;
    }
   
